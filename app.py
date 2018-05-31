@@ -1,21 +1,24 @@
 from flask import Flask, render_template, jsonify, redirect
 from flask_pymongo import PyMongo
+from flask_bootstrap import Bootstrap
 import pymongo
 import requests
-
+import json
 import datetime
 import time
 
 
 app = Flask(__name__)
+Bootstrap(app)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 conn = 'mongodb://stockAnalysis:stocks1@ds135760.mlab.com:35760/heroku_mfn0bnmj'
 client = pymongo.MongoClient(conn)
 db = client.heroku_mfn0bnmj
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route("/history")
 def history():
