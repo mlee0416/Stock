@@ -1,6 +1,5 @@
 from flask import Flask, render_template, jsonify, redirect
 from flask_pymongo import PyMongo
-from flask_bootstrap import Bootstrap
 import pymongo
 import requests
 import json
@@ -9,7 +8,6 @@ import time
 
 
 app = Flask(__name__)
-Bootstrap(app)
 
 @app.route('/')
 def index():
