@@ -52,7 +52,7 @@ function buildPlot(stock) {
 
   Plotly.d3.json(urlSP, function(error, response){
     
-    if (error) return console.warn(error);
+    if (error) return location.reload();;
     
     var nameSP = response.quote.companyName;
     let dateSP = [];
