@@ -25,7 +25,7 @@ def history():
 
     stock = list(db.stock.find())
     print(stock)
-    return render_template('index3.html', stock=stock)
+    return render_template('index2.html', stock=stock)
 
 
 
