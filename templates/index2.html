@@ -67,32 +67,33 @@
 <body>
   <!-- page header -->
   <div class="container">
-      <div class = "row">
-          <div class="col-md-12 jumbotron text-center">
-            <h1 class="text-primary">Stock History Recorded Data</h1>
-            <table>
-            <!---   First-->
-                    {% for name in stock %}
-                    <div class="col-md-3" >
-                    <ul class="list-group">
-                        <li class="list-group-item" 
-                            <strong>Ticker:</strong> {{ name.ticker_s }}</li>
-                        <li class="list-group-item" 
-                                    <strong>Company&nbsp;Name:</strong> {{ name.company_name }}</li>    
-                        <li class="list-group-item" 
-                            <strong>Close&nbsp;Value:</strong> {{ name.close_value }}</li>
-                        <li class="list-group-item" 
-                            <strong>Open&nbsp;Value:</strong> {{ name.open_value }}</li>
-                        <li class="list-group-item" 
-                            <strong>Recorded&nbsp;Date:</strong> {{ name.ddate }}</li>
-                    </ul>
-                    </div>        
-                    {% endfor %}
-            </table>
-            <!--- First-->
-
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
         </div>
-      <div>
+      </div>
+    </div>
+    {% for name in stock %}
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Ticker: {{ name.ticker_s }}</th>
+              <th>Company&nbsp;Name: {{ name.company_name }}</th>
+              <th>Close&nbsp;Value: {{ name.close_value }}</th>
+              <th>Open&nbsp;Value: {{ name.open_value }}</th>
+              <th>Recorded&nbsp;Date: {{ name.ddate }}</th>
+            </tr>
+            {% endfor %}
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
     <!--- Second--> 
     <div class="col-md-12 jumbotron text-center">
     <div class="container">
