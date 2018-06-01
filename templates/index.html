@@ -21,6 +21,17 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script> 
 
+    <!--Animate -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+      integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+      crossorigin="anonymous">
+      <!-- or -->
+      <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+      integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+      crossorigin="anonymous">
+
 
   </head>
 
@@ -89,13 +100,13 @@
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-4">
-        <h1>Search by Company Ticker</h1>
-        <p>Click to find out the latest stock information </p>
+        <h1 class="animated bounceInDown">Search by Company Ticker</h1>
+        <p class="animated bounceInDown">Click to find out the latest stock information </p>
     <!-- ticker button -->
     <div class="container">
         <form class="form-inline">
         <div class="form-group">
-          <label for="stockInput">Enter Ticker:  </label>
+          <label for="stockInput" class="animated bounceInLeft">Enter Ticker:  </label>
           <input type="text" class="form-control"style="margin:15px" id="stockInput" placeholder="Ticker">
         </div>
         <button id="submit" type="submit" class="btn btn-default" >Plot Stock</button>
@@ -182,7 +193,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- JSON Script Files -->
     <script type="text/javascript" src= "{{ url_for('static', filename='js/plots.js') }}"></script>
-    <script src="../static/js/stocktable.js"></script>
+    <script type="text/javascript" src= "{{ url_for('static', filename='js/stocktable.js') }}"></script>
 
   </body>
 
