@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, redirect
-from flask_pymongo import PyMongo
 import pymongo
 import requests
 import json
@@ -12,21 +11,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
-
-conn = 'mongodb://stockAnalysis:stocks1@ds135760.mlab.com:35760/heroku_mfn0bnmj'
-client = pymongo.MongoClient(conn)
-db = client.heroku_mfn0bnmj
-
-
-@app.route("/history")
-def history():
-    print('History data')
-    #stock = mongo.db.stock.find()
-
-    stock = list(db.stock.find())
-    print(stock)
-    return render_template('index2.html', stock=stock)
-
 
 
 @app.route("/stocks/<stockInput>", methods=['GET'])
